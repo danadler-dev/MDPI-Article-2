@@ -80,7 +80,7 @@
 \Title{Dynamic Assembly Theory and Information Evolution}
 
 % MDPI internal command: Title for citation in the left column
-\TitleCitation{Assembly Dynamics and Information Evolution: A Forward Perspective}
+\TitleCitation{Dynamic Assembly Theory and Information Evolution}
 
 % Author Orchid ID: enter ID or remove command
 \newcommand{\orcidauthorA}{0009-0007-7122-0317} % Add \orcidA{} behind the author's name
@@ -180,7 +180,16 @@ $^{1}$ \quad dan@danadler.com.com}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction and Background}
 
-The emergence of complexity and information from randomness is a profound question spanning physics, biology, chemistry, and computation. Recent developments, such as Lloyd's quantum computational perspective \cite{lloyd2006programming}, Davies' exploration of information's role in biological processes \cite{davies2019demon}, Tegmark's "Mathematical Universe" \cite{tegmark2008mathematical}, and Wolfram's cellular-automata universe framework \cite{wolfram2020fundamental} conceptualize complexity and information as emergent properties. However, these works leave unresolved how such properties arise dynamically from abiotic processes. This paper introduces ABC systems \cite{adler2024howinfoevolves}, an abstract framework for modeling the evolution of patterns through probabilistic interactions and stability-driven selection. Through successive generations, these systems evolve patterns shaped by selection pressures that favor stable configurations that persist longer and interact more frequently. This dynamic process has the potential to encode logical operations, computational rules, and, under certain conditions, self-replicating behaviors, offering a conceptual foundation for understanding the transition from abiotic processes to biotic evolution. However, significant challenges remain in applying these principles to realistic prebiotic contexts or computational models.
+The emergence of complexity and information from randomness is a profound question spanning physics, biology, chemistry, and computation. Recent developments, such as Lloyd's quantum computational perspective \cite{lloyd2006programming}, Davies' exploration of information's role in biological processes \cite{davies2019demon}, Tegmark's "Mathematical Universe" \cite{tegmark2008mathematical}, and Wolfram's cellular-automata universe framework \cite{wolfram2020fundamental}, conceptualize complexity and information as emergent properties. However, these works leave unresolved how such properties arise dynamically from abiotic processes.
+
+Assembly Theory (AT) \cite{walker2023nature} provides a powerful framework for understanding how selection shapes the generation and proliferation of complex objects by quantifying their assembly index, defined as the minimal number of recursive steps required to construct an object. By incorporating both historical contingency and selection, AT offers insights into the combinatorial explosion of possibilities in assembly spaces, illustrating how selection restricts this space to produce high-complexity objects found in abundance. However, AT typically operates from an observed object backward, constructing assembly pathways to infer the history of its formation.
+
+This paper introduces ABC systems \cite{adler2024howinfoevolves}, which extend and complement AT by focusing on forward dynamics: modeling how patterns evolve step by step from base elements through probabilistic interactions and stability-driven selection. Unlike the retrospective approach of AT, ABC systems explore the generative processes that lead to the creation and proliferation of complex patterns in a dynamic environment. Stability constraints play a central role, as they bias interactions toward configurations that persist longer and interact more frequently, introducing an element of selection akin to that described in AT. This dynamic process has the potential to encode logical operations, computational rules, and, under certain conditions, self-replicating behaviors. The forward-building approach of ABC systems offers a practical framework for exploring the emergence of complexity, particularly in prebiotic or synthetic contexts.
+
+By drawing connections between ABC systems and AT, this work highlights both overlapping and complementary aspects of the two frameworks. While AT provides a rigorous empirical measure of selection and assembly, ABC systems offer a predictive and generative model for understanding how stability and interaction rules shape the evolution of complexity over successive generations. This perspective bridges gaps between backward-looking and forward-building approaches to complexity, laying the groundwork for a unified theory of assembly and information evolution.
+
+However, significant challenges remain in applying these principles to realistic prebiotic or computational models. This paper addresses these challenges by deriving theoretical insights, employing simulations, and relating the dynamics of ABC systems to established concepts from physics, chemistry, and information theory.
+
 
 \subsection{Definition of ABC Systems}
 
@@ -198,15 +207,25 @@ Longevity quantifies the duration for which a pattern remains viable, increasing
 
 The dynamic evolution of ABC systems is driven by a fixed replenishment of base elements, ensuring a consistent influx of resources that sustain interaction and pattern formation. This replenishment prevents stagnation and allows the system to explore a wide range of configurations over successive generations. As interactions occur, stable compounds accumulate, leading to the emergence of complex patterns and feedback loops that reinforce their persistence.
 
-A previous paper \cite{adler2024howinfoevolves} highlights several key emergent phenomena of ABC systems, such as entropy reduction, and the dynamic interplay between top-down and bottom-up causality. Through simulations and theoretical analysis, it shows how ABC systems can encode information, compute logic, and generate self-organizing behaviors without invoking external design or intelligent agents.
+This framework bears similarities to Assembly Theory (AT), which also quantifies the generation of complexity through recursive processes. In AT, the assembly index measures the minimum number of recursive steps needed to construct an object, and selection is inferred from observing high-complexity objects in abundance. Unlike AT, which primarily works backward from observed objects to infer assembly pathways, ABC systems take a forward-looking approach, modeling the generative processes that lead to complexity. In this way, ABC systems emphasize the role of probabilistic interactions and stability-driven selection in real-time evolution.
 
-\subsection{Contributions of This Work}
+By integrating concepts from AT, ABC systems provide a complementary perspective, focusing on how stability influences the exploration of assembly spaces and the dynamic interplay between top-down and bottom-up causality. A previous paper \cite{adler2024howinfoevolves} highlights several key emergent phenomena of ABC systems, such as entropy reduction, and the dynamic interplay between these causal structures. Through simulations and theoretical analysis, it shows how ABC systems can encode information, compute logic, and generate self-organizing behaviors without invoking external design or intelligent agents. The forward-building approach of ABC systems offers a novel perspective for understanding complexity in natural and synthetic systems.
 
-This paper extends the framework by providing new insights into the dynamics of information and the evolution of complexity. We establish a Lagrangian formulation of the dynamics of the ABC system, demonstrating alignment with the principle of least action and uncovering efficient resource allocation mechanisms. 
+\subsection{Connections to Assembly Theory and Distinct Contributions}
 
-Represented as dynamic graphs, ABC systems model the flow of base elements and compounds through networks of nodes and edges. Stability constraints govern these flows, analogous to resistances in electrical circuits, pressure gradients in fluid dynamics \cite{landau1987fluid}, and supply-demand dynamics in economics \cite{mascolell1995microeconomic}. The interplay between local interactions and global patterns leads to emergent behaviors such as resource allocation, self-organization, and path-dependent evolution. These dynamics encode computational rules, recursive causality, and even self-replicating behaviors, offering a comprehensive perspective on the transition from disordered states to structured configurations.
+Assembly Theory (AT) \cite{walker2023nature} provides a framework for understanding the emergence of complexity by tracing the assembly pathways of observed objects. AT quantifies an object’s complexity through its assembly index, which measures the minimum number of steps required to construct it from elementary building blocks. This backward-tracing approach emphasizes historical contingency, revealing the combinatorial explosion of possibilities and the selective processes that constrain observed outcomes. Concepts such as the assembly universe (AU), assembly possible (AP), and assembly contingent (AC) delineate the combinatorial, physically feasible, and historically influenced spaces, respectively.
 
-Additionally, we relate ABC systems to Bayesian updating, highlighting its universality in modeling emergent phenomena. Comparisons with unrestricted systems and classical frameworks, such as Markov processes and mass-action kinetics, emphasize the unique role of stability-driven selection in evolving complexity. This work advances the understanding of how information evolves in abiotic contexts, bridging randomness and order across diverse scientific domains.
+ABC systems, by contrast, adopt a forward-looking perspective, modeling the generative process of evolving patterns through probabilistic interactions and stability-driven selection. Starting with base elements ($A$, $B$, $C$), ABC systems simulate iterative interactions and stability-guided evolution, highlighting the mechanisms by which certain configurations persist and proliferate. This forward approach complements AT by focusing on the dynamic processes that generate complexity rather than reconstructing it from observed structures.
+
+Both frameworks explore how selection shapes the combinatorial space of possibilities. While AT employs the assembly index to infer selection retrospectively, ABC systems dynamically encode selection via stability constraints, which influence the persistence and interactions of patterns in real-time. Unlike AT’s static definitions, the context-dependency of stability in ABC systems reflects the impact of environmental factors such as temperature, pressure, and resource availability, offering a more dynamic and adaptable model.
+
+ABC systems also extend AT’s forward dynamics by explicitly modeling resource replenishment, turnover, and feedback loops. These features allow for the exploration of how stability gradients and environmental constraints shape complexity in evolving systems. In this way, ABC systems provide a complementary lens to AT, enriching our understanding of the interplay between historical contingency and dynamic evolution.
+
+The integration of AT’s historical focus and ABC systems’ dynamic perspective reveals new insights into the evolution of complexity. AT excels at quantifying the cumulative effects of selection and historical pathways, while ABC systems emphasize the processes of pattern discovery and stabilization. Together, these approaches highlight selection as a unifying principle, whether inferred retrospectively or modeled prospectively, and provide a framework for understanding the emergence of complexity across natural and artificial systems.
+
+By bridging these perspectives, this work extends the applicability of evolutionary principles, offering insights into phenomena ranging from prebiotic chemistry to complex networks. ABC systems, with their focus on stability-driven dynamics, complement AT’s focus on assembly indices and contingent spaces, contributing to a unified understanding of how order and information arise in diverse contexts.
+
+
 
 \section{Unrestricted vs ABC Systems: Expected distributions}
 
@@ -494,6 +513,12 @@ In conclusion, ABC systems offer a simple generative framework for studying the 
     \bibitem{tegmark2008mathematical} M. Tegmark, "The Mathematical Universe," \textit{Foundations of Physics} \textbf{38}, 101-150 (2008).
     %4
     \bibitem{wolfram2020fundamental} S. Wolfram, \textit{A Project to Find the Fundamental Theory of Physics} (Wolfram Media, 2020).
+    %4.5
+    \bibitem{walker2023nature}
+    S. I. Walker, L. Cronin, and others,
+    "Assembly theory explains and quantifies selection and evolution across physical and biological systems,"
+    \textit{Nature}, \textbf{618}, 619-628 (2023),
+    doi:10.1038/s41586-023-06600-9.
     %5
     \bibitem{adler2024howinfoevolves} D. Adler, "How Information Evolves," \textit{Preprints}, 2024, \url{https://www.preprints.org/manuscript/202412.1649/v1}.
     %6
