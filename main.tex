@@ -349,39 +349,27 @@ Traditionally viewed as a tool for updating subjective beliefs based on new info
 
 \subsection{Bayesian vs Markov Analysis in Evolutionary Systems}
 
-The Bayesian framework described above provides a basis for comparing ABC systems with Markov analysis. Although ABC systems exhibit generational dependency akin to a Markov process, they differ fundamentally due to their dynamically expanding state space, nonstationary transition probabilities, and the evolutionary significance of individual pathways rather than global distributions. 
+The Bayesian framework provides a more suitable lens for analyzing ABC systems than traditional Markov processes, due to the dynamically expanding state space, nonstationary transition probabilities, and the emphasis on evolutionary pathways rather than aggregate distributions. 
 
-In a classical Markov process \cite{norris1997markov}, the probability of transitioning to a new state depends only on the current state, expressed as \( P(O_{t+1} \mid O_t) \). For ABC systems, this dependency is captured by the Bayesian update rule derived earlier in Eq.~(\ref{eq:bayes}). If we attempt to frame ABC systems in a Markovian context, we consider the joint probability of all patterns in \( O_{t+1} \) given \( O_t \). This would be expressed as:
-\begin{equation}
-P(O_{t+1} \mid O_t) = \prod_{p \in O_{t+1}} P(p_{t+1}),
-\end{equation}
-where \( P(p_{t+1}) \) is derived from the Bayesian update formula. However, this joint probability approach aligns poorly with the typical ABC system analysis goals, since it aggregates over all possible evolutionary pathways without distinguishing the specific transitions that drive the system dynamics.
+Classical Markov processes \cite{norris1997markov} rely on fixed state spaces and stationary transition probabilities, making them ill-suited for the generative dynamics of ABC systems, where new patterns emerge and interactions evolve based on stability constraints. Unlike Markov chains, which aggregate probabilities across the entire state space, the Bayesian update rule in Eq.~(\ref{eq:bayes}) directly models the evolution of individual patterns by integrating prior probabilities, interaction dynamics, and stability.
 
-Markov-based tools, such as transition matrices or joint probability distributions, are less suited to analyzing ABC systems because of several limitations inherent to the Markovian framework. In classical Markov chains, the state space is fixed, allowing for a static transition matrix. In ABC systems, the state space expands dynamically as new patterns emerge, making it infeasible to pre-define or maintain a complete transition matrix. Markov processes often assume stationary transition probabilities that remain constant over time. In ABC systems, transition probabilities evolve with each generation, driven by stability constraints, interactions, and the emergence of new patterns. This nonstationarity requires recalculating transition probabilities at every step, undermining the utility of standard Markov tools.
+Hidden Markov models (HMMs) \cite{rabiner1989hmm} are similarly misaligned with ABC systems, as they depend on hidden states to explain observable dynamics. In contrast, the explicit modeling of stabilities and probabilistic interactions in ABC systems eliminates the need for latent variable assumptions inherent to HMMs.
 
-Hidden Markov models (HMMs) \cite{rabiner1989hmm} also do not appear very promising, as they model systems where hidden states drive the observable dynamics, and these hidden states are key to uncovering latent structures. In ABC systems, the core mechanisms, such as stabilities, token flows, and probabilistic interactions, are already explicitly modeled, which makes the HMM framework somewhat redundant.
-
-ABC system analysis typically prioritizes the specific evolutionary pathways the system takes, tracing the formation and persistence of individual patterns. The Bayesian formula directly addresses this by updating the probability of each pattern based on prior abundances, interactions, and stability. In contrast, Markov approaches aggregate the joint probability distribution of all patterns, obscuring the details of specific transitions. Stability values in ABC systems bias interactions, introducing selection pressure that amplifies certain patterns over others. Although Markov chains can represent biases through weighted transitions, they do not naturally account for the feedback mechanisms and adaptive dynamics encoded in the Bayesian framework.
-
-ABC systems are designed to model the exploration of new possibilities, where interactions produce novel patterns that were not part of the prior generation. Markov processes are ill-suited for this type of open-ended generativity, as they rely on a predefined set of states and transitions.
-
-The Bayesian framework overcomes these limitations by focusing on the probabilities of individual patterns and their generational updates. The Bayesian formula in Eq.~(\ref{eq:bayes}) directly captures the dynamics of pattern evolution, integrating prior probabilities, interaction dynamics, and stability constraints. This generational update aligns with the goals of ABC systems, enabling the analysis of specific pathways and their adaptive significance. By focusing on individual patterns rather than the joint distribution, the Bayesian approach provides a clearer view of how selection pressure and stability drive the emergence of dominant patterns. This focus on pathways, coupled with the ability to model evolving state spaces and nonstationary dynamics, makes the Bayesian framework a more natural and insightful tool for analyzing ABC systems.
+Assembly Theory (AT) provides a complementary perspective by focusing on reconstructing historical assembly pathways from observed objects. While AT quantifies historical contingency through assembly indices, ABC systems adopt a forward generative approach, tracing how stability-driven selection shapes emergent patterns over successive generations. This dynamic perspective distinguishes ABC systems from both AT and Markov frameworks, emphasizing how evolutionary processes explore novel configurations constrained by stability and environmental factors.
 
 \subsection{Exploring Mass Action Kinetics in the Context of ABC Systems}
 
-Mass Action Kinetics (MAK) \cite{TuranyiTomlin2014} provides a well-established framework in chemistry to describe the evolution of reactant concentrations over time through deterministic rate equations. The principles of MAK, rooted in stoichiometry and reaction rates, are particularly effective for modeling systems with predefined reactions and a fixed set of chemical species.
-
-In MAK, the dynamics of a system are governed by rate equations of the form:
+Mass Action Kinetics (MAK) \cite{TuranyiTomlin2014} describes chemical reaction dynamics through deterministic rate equations, such as:
 \begin{equation}
 \frac{d[A]}{dt} = -k[A][B],
 \end{equation}
-where \( [A] \) and \( [B] \) represent the concentrations of reactants, and \( k \) is the reaction rate constant. These equations enforce strict conservation laws for mass and energy, ensuring that the total amount of reactants and products remains constant across all reactions. This conservation constraint is analogous to the way ABC systems track the counts of patterns across generations, ensuring that interactions respect stability and population dynamics.
+where \( [A] \) and \( [B] \) are reactant concentrations, and \( k \) is the reaction rate constant. MAK ensures conservation laws for mass and energy, analogous to how ABC systems track pattern counts to maintain stability and population dynamics. In the context of Assembly Theory (AT), MAK has been used to quantify selection and novelty generation by modeling recursive object construction in a forward process \cite{walker2023nature}.
 
-Despite these similarities, MAK imposes a critical limitation: the set of reactions must be specified a priori. This means that MAK does not support the evolutionary discovery of new patterns or compounds, a hallmark of ABC systems. In MAK, the reactions and their rate laws are immutable, leading to a closed system that lacks the flexibility to explore novel configurations or emergent behaviors.
+However, MAK assumes predefined reactions and immutable rate laws, making it ill-suited for modeling the open-ended discovery of new patterns central to ABC systems. While MAK provides a unified language for describing selection processes, its deterministic nature contrasts with the stochastic framework of ABC systems, where probabilistic interactions and stability constraints guide the emergence of novel configurations. This probabilistic approach enables ABC systems to dynamically explore the "adjacent possible" \cite{kauffman1996investigations} and evolve through iterative selection, which MAK cannot inherently capture.
 
-The deterministic framework of MAK also contrasts with the probabilistic nature of ABC systems. In MAK, reaction rates directly determine the changes in concentrations, resulting in smooth and predictable trajectories over time. ABC systems, on the contrary, operate probabilistically, with interactions guided by stability values and prior abundances. This stochasticity introduces variability and adaptability, allowing ABC systems to explore Kauffman's concept of the "adjacent possible" \cite{kauffman1996investigations} and generate unforeseen patterns through combinatorial interactions.
+The AT paper \cite{walker2023nature} highlights MAK’s utility in describing forward assembly processes, linking object production to measurable quantities such as assembly index and copy number. ABC systems complement this perspective by explicitly modeling the generative processes that create and stabilize patterns over time. Stability values in ABC systems can serve as analogs to reaction rate constants, allowing MAK-like equations to approximate certain dynamics of stable patterns. However, ABC systems extend beyond MAK by incorporating adaptive feedback, environmental constraints, and context-dependent stability, providing a richer framework for modeling selection and complexity in evolving systems.
 
-Although MAK does not inherently support open-ended generativity, its principles can still be adapted to certain aspects of ABC systems. For instance, MAK-style equations could be employed to approximate the dynamics of stable patterns in ABC systems, treating stability values as analogs to reaction rate constants. These equations would describe how the population of stable patterns evolves over generations, providing a deterministic view of this subset of the system.
+By integrating MAK principles where appropriate, such as in the deterministic evolution of stable patterns, future research could enhance the predictive power of ABC systems while preserving their capacity to model the stochastic and adaptive aspects of real-world evolutionary processes.
 
 \section{Dynamic Graph Representation and Token Flow Analysis}
 
@@ -423,85 +411,76 @@ This example also highlights the similarities and differences between ABC system
 
 \section{Lagrangian Analysis of ABC Systems}
 
-The flow dynamics of tokens in ABC systems can be elegantly captured by interpreting high-stability nodes as low-potential energy wells within the probability space. Nodes with greater stability, \( S(p) \), attract tokens, driving their accumulation and strengthening self-organized paths. This concept of "demand" naturally translates into a potential energy framework, where the potential energy of a node is inversely related to its stability. Token redistribution can also be analyzed in terms of the "effort" required for transitions between nodes. This effort is analogous to kinetic energy.
+The flow dynamics of tokens in ABC systems can be captured by interpreting high-stability nodes as low-potential energy wells within a probability space. Nodes with greater stability (\( S(p) \)) attract tokens, forming self-organized paths. This "demand" can be framed as potential energy, inversely related to stability, while redistribution effort is analogous to kinetic energy.
 
-The potential energy \( U \) reflects the stability-weighted demand at each node. For a node \( p \), the contribution of potential energy depends on the stability of its incoming edges and the token counts at neighboring nodes. The potential energy of node \( p \) is given by:
+The potential energy \( U \) reflects the stability-weighted demand at each node:
 \begin{equation}
 U(p) = -\sum_{q \in \text{neighbors}(p)} S(p, q) \cdot N_q,
 \end{equation}
-where \( N_q \) is the number of tokens at neighboring node \( q \). Through replenishment, base nodes gain an additional contribution to their potential energy:
+where \( N_q \) is the token count at neighboring node \( q \). Base nodes gain an additional contribution from replenishment:
 \begin{equation}
 U_{\text{replenish}}(p) = -R_p \cdot S(p),
 \end{equation}
-where \( R_p \) is the replenishment rate for node \( p \). The total potential energy across the graph is therefore:
+with \( R_p \) as the replenishment rate. The total potential energy becomes:
 \begin{equation}
 U = \sum_{p} \left( -\sum_{q \in \text{neighbors}(p)} S(p, q) \cdot N_q - R_p \cdot S(p) \right).
 \end{equation}
 
-The kinetic energy \( T \) quantifies the redistribution effort required for token flows between nodes. It is derived by analogy to classical mechanics, where the kinetic energy is proportional to the square of the velocity and weighted by the mass. In the ABC system, the flow rate \( \frac{\Delta N_{pq}}{\Delta t} \) replaces velocity, and the stability \( S(p, q) \) acts as an effective inertial mass, modulating the cost of redistribution based on the stability of interactions. Summing over all pairs of interacting nodes yields the total kinetic energy, with higher stability reducing the redistribution cost and higher flow rates increasing it. This formulation captures the dynamic effort to maintain token flows in the evolving system. For a flow of tokens from node \( p \) to node \( q \), the contribution to the kinetic energy is given by:
+The kinetic energy \( T \) quantifies the redistribution effort for token flows. Analogous to classical mechanics, flow rate \( \Delta N_{pq} / \Delta t \) replaces velocity, and stability \( S(p, q) \) acts as inertial mass. For a flow from \( p \) to \( q \), the contribution is:
 \begin{equation}
-T_{pq} = \frac{1}{2} S(p, q) \left( \frac{\Delta N_{pq}}{\Delta t} \right)^2,
+T_{pq} = \frac{1}{2} S(p, q) \left( \frac{\Delta N_{pq}}{\Delta t} \right)^2.
 \end{equation}
-where:
-\begin{itemize}
-    \item[] \( S(p, q) \) is the stability of the interaction between \( p \) and \( q \),
-    \item[] \( \Delta N_{pq} \) is the number of tokens flowing from \( p \) to \( q \) in time \( \Delta t \).
-\end{itemize}
-Summing over all edges in the graph, the total kinetic energy is:
+Summing over all edges gives:
 \begin{equation}
 T = \sum_{(p, q)} \frac{1}{2} S(p, q) \left( \frac{\Delta N_{pq}}{\Delta t} \right)^2.
 \end{equation}
-Combining these terms, the Lagrangian \(\mathcal{L} = T - U \) becomes:
+
+Combining these terms, the Lagrangian is:
 \begin{equation}
-\mathcal{L} = \sum_{(p, q)} \frac{1}{2} S(p, q) \left( \frac{\Delta N_{pq}}{\Delta t} \right)^2 + \sum_{p} \left( \sum_{q \in \text{neighbors}(p)} S(p, q) \cdot N_q + R_p \cdot S(p) \right).
+\mathcal{L} = T - U = \sum_{(p, q)} \frac{1}{2} S(p, q) \left( \frac{\Delta N_{pq}}{\Delta t} \right)^2 + \sum_{p} \left( \sum_{q \in \text{neighbors}(p)} S(p, q) \cdot N_q + R_p \cdot S(p) \right).
 \label{eq:lagrange}
 \end{equation}
 
-This formulation provides a complete description of the system's dynamics, where \( T \) quantifies the redistribution effort, and \( U \) captures the stability-driven potential landscape. The evolution of the system is governed by minimizing the action \( \mathcal{A} \), which is the time integral of the Lagrangian \cite{goldstein2002classical}: 
+System evolution minimizes the action \( \mathcal{A} \), defined as the time integral of \( \mathcal{L} \) \cite{goldstein2002classical}:
 \begin{equation}
 \mathcal{A} = \int \mathcal{L} \, dt.
 \label{eq:action}
 \end{equation}
 
-When we analyze some edge cases of \( \mathcal{A} \), the following dynamics emerges: For the case where all stabilities are equal \(S(p, q) = S_0\) for all \(p, q\), the kinetic term becomes uniform, and the potential energy term simplifies to an equal contribution across all nodes. This leads to a uniform distribution of token flow, as the system minimizes the action by equalizing \(\Delta N_{pq} / \Delta t\) at all edges. Consequently, no preferential redistribution occurs, and the system reflects the uniform state space dynamics of unconstrained systems.
+\subsection{Edge Cases and Dynamics}
+When stabilities are uniform (\( S(p, q) = S_0 \)), the kinetic term is constant, and the potential energy equalizes across nodes, producing uniform token flows, akin to unconstrained systems. Conversely, when one node dominates in stability (\( S(p, R) \gg S(p, q) \)), the action is minimized by directing flows to the dominant node, forming a sink. Competing nodes with similar stabilities split flows proportionally, while sparse stability landscapes localize flows into distinct clusters.
 
-In contrast, when one node dominates in stability (\(S(p, R) \gg S(p, q)\) for all \((p, q) \neq (p, R)\)), the potential energy term is heavily weighted towards the dominant node. The action is minimized by directing most of the token flow to this node, effectively making it a sink for the token flow. The remaining nodes receive negligible contributions, mirroring the collapse of token dynamics into a single dominant pathway.
-
-Other edge cases highlight additional insights. For instance, when two nodes compete with comparable stabilities, the token flow splits proportionally to their relative stabilities, leading to shared dominance that reflects bifurcation dynamics. Sparse stability landscapes, where only a subset of nodes have non-zero stability, create isolated clusters of token flow, forming sparse localized networks. Dynamic stabilities, which evolve over time, drive transitions between equilibria, revealing the system's capacity for adaptation. 
+These dynamics align with the polymerization example in Figure~\ref{fig:abc_sim}, where high-stability nodes represent chemically stable intermediates or products. The framework also relates to Assembly Theory (AT), with stabilities introducing constraints akin to selection processes. Unlike AT’s mass-action kinetics, which derive forward assembly probabilities, ABC systems emphasize dynamic interactions and feedback loops, enabling transitions between equilibria and emergent adaptation.
 
 \subsection{Comparison with Supply-Demand Perspective of ABC Systems}
 
-The dynamics of token flows in ABC systems can also be interpreted through a supply-demand framework, which provides a complementary node-centric perspective. In this view, the stability distribution determines the "demand" for tokens at each node, while the token flow along edges fulfills this demand based on the available "supply."  The supply at a node \(p\) is given by:
+The dynamics of token flows in ABC systems can also be interpreted through a supply-demand framework, offering a node-centric perspective. In this view, the stability distribution determines the "demand" for tokens at each node, while token flow along edges fulfills this demand based on the available "supply." The supply at a node \(p\) is defined as:
 \begin{equation}
 \text{Supply}(p) = R_p + \sum_{q \in \text{neighbors}(p)} \Delta N_{qp},
 \end{equation}
-where \(R_p\) is the replenishment rate at node \(p\) and \(\Delta N_{qp}\) is the flow of tokens from neighboring nodes \(q\) to \(p\). Conversely, the demand at node \(p\) is proportional to the stability-weighted contributions of its neighbors:
+where \(R_p\) is the replenishment rate at \(p\), and \(\Delta N_{qp}\) is the flow of tokens from neighboring nodes \(q\) to \(p\). Conversely, the demand at \(p\) is proportional to the stability-weighted contributions of its neighbors:
 \begin{equation}
 \text{Demand}(p) = \sum_{q \in \text{neighbors}(p)} S(p, q) \cdot N_q,
 \end{equation}
-where \(S(p, q)\) is the stability between \(p\) and \(q\), and \(N_q\) is the token count at \(q\). At equilibrium, supply and demand balance at each node:
+where \(S(p, q)\) represents the stability between \(p\) and \(q\), and \(N_q\) is the token count at \(q\). At equilibrium, the supply and demand balance at each node:
 \begin{equation}
 R_p + \sum_{q \in \text{neighbors}(p)} \Delta N_{qp} = \sum_{q \in \text{neighbors}(p)} S(p, q) \cdot N_q.
 \end{equation}
-This balance determines the distribution of token flows \(\Delta N_{pq}\) throughout the system. The supply-demand framework provides results consistent with the Lagrangian edge case analysis discussed earlier:
-\begin{itemize}
-    \item[] For uniform stabilities (\(S(p, q) = S_0\)), the flows \(\Delta N_{pq}\) are distributed uniformly, resulting in a flat supply-demand curve.
-    \item[] For a dominant stability node, the flows concentrate on the dominant node, creating a sharply peaked supply-demand curve.
-    \item[] For competing nodes with comparable stabilities, flows split proportionally, resulting in multiple peaks.
-    \item[] For sparse stability landscapes, token flows localize around nodes with nonzero stability, producing isolated points on the curve.
-\end{itemize}
 
-This agreement underscores the complementary nature of the supply-demand and Lagrangian perspectives. The former highlights localized flow dynamics at nodes, while the latter emphasizes the global minimization of the action integral. Together, they provide a unified understanding of token redistribution in ABC systems.
+This framework aligns with the Lagrangian analysis, capturing key flow dynamics under different stability scenarios. For uniform stabilities (\(S(p, q) = S_0\)), token flows distribute evenly, producing a flat supply-demand curve. When one node dominates in stability, token flows concentrate on the dominant node, creating a sharply peaked curve. In cases where multiple nodes have comparable stabilities, flows split proportionally, resulting in multiple peaks. Finally, in sparse stability landscapes, flows localize around nodes with nonzero stability, forming isolated points on the curve.
+
+The supply-demand perspective complements the Lagrangian approach by emphasizing localized flow dynamics, while the latter captures the global minimization of the action integral. Together, these perspectives provide a unified understanding of token redistribution and resource allocation in ABC systems.
 
 \section{Punctuated Equilibrium and Disruption in ABC Systems}
 
-The dynamics of ABC systems are not static; they are characterized by periods of equilibrium, where established flows dominate, interspersed with disruptive events that radically alter the flow landscape. This behavior parallels the concept of punctuated equilibrium, originally developed in evolutionary biology to describe long periods of stability disrupted by rapid evolutionary change. In ABC systems, this manifests itself as the sudden emergence of new nodes with high stability, capable of redirecting flows and forcing the system to adjust to a new equilibrium.
+ABC systems exhibit dynamics characterized by periods of stability, where established flows dominate, interspersed with disruptions that radically reshape the flow landscape. This parallels the concept of punctuated equilibrium from evolutionary biology, describing long periods of equilibrium disrupted by rapid change. In ABC systems, these disruptions arise from the probabilistic emergence of new, highly stable nodes that redirect flows and force the system to transition to a new equilibrium.
 
-Consider the graph in Figure~\ref{fig:abc_sim} with a dominant high-stability node, such as \( ABCABA \) (stability \( S = 8 \)). If a new node \( ABCABC \) emerges with even higher stability (\( S = 10 \)), the flow to \( ABCABA \) can be diverted entirely or partially to the new node. The appearance of \( ABCABC \) would alter the flow dynamics throughout the graph, as the tokens are reallocated to optimize for the new potential landscape. This transition could trigger a cascade of secondary flow redirects as the system seeks a new equilibrium, reshaping the dominance hierarchy of patterns.
+For instance, consider the graph in Figure~\ref{fig:abc_sim}, where a dominant high-stability node, such as \( ABCABA \) (\( S = 8 \)), governs flow dynamics. If a new node \( ABCABC \) emerges with greater stability (\( S = 10 \)), it can divert flows from \( ABCABA \), triggering a cascade of reallocation across the system. Such transitions highlight the inherent stochasticity of node creation in ABC systems, where new configurations emerge probabilistically, reshaping the stability landscape and dominance hierarchy.
 
-The potential for disruption arises from the unbounded nature of the state space. New nodes form probabilistically through interactions, meaning the system's evolution is inherently nondeterministic during periods of active node creation. However, during periods of equilibrium—when few if any new nodes are formed—the system's dynamics are more predictable, with flows stabilizing along established pathways. These stable periods can persist for long durations, punctuated by the stochastic emergence of highly stable disruptor nodes.
+As we showed in Figure~\ref{fig:polymerization_graph}, this is analogous to polymerization processes, such as the formation of polysaccharides. Initially, simpler chains of \( \text{C}_x(\text{H}_2\text{O})_y \) dominate, growing incrementally to more stable intermediate structures. However, the emergence of highly stable configurations, like cellulose, requires overcoming low-probability barriers associated with long chains. These transitions are rare due to the steep stability gradients and are often contingent on specific environmental conditions. This mirrors the historical contingency emphasized in Assembly Theory (AT), where high-assembly-index objects reflect pathways shaped by selection and constraints \cite{walker2023nature}.
 
-This behavior can be illustrated with an example from organic chemistry. Consider polysaccharide chains, which can be represented as long strings of \( \text{C}_x(\text{H}_2\text{O})_y \). These chains may grow to hundreds of units (\( x, y \sim 100 \)) before a more stable yeast-like structure is formed. Beyond this, growth to thousands of units (\( x, y \sim 1000 \)) may occur before cellulose emerges as a highly stable product. Such transitions are rare because the stability gradients along the growth paths only become strong after hundreds of relatively unconstrained linkages are added. The probability of reaching these long chains is low, and the system remains in a quasi-equilibrium state dominated by smaller, less stable polysaccharides. This is likely why complex polysaccharides like cellulose do not spontaneously form in nature; their formation pathways require extraordinary conditions to overcome the low-probability barrier of intermediate configurations.
+In ABC systems, the interplay between stochastic node creation and stability-driven flows creates a dynamic equilibrium that mirrors real-world chemical and biological processes. By explicitly modeling these transitions, ABC systems offer insights into how complexity evolves through both gradual adaptations and disruptive innovations.
+
 
 \section{Conclusions and Future Directions}
 
