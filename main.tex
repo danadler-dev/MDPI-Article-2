@@ -77,16 +77,16 @@
 
 %=================================================================
 % Full title of the paper (Capitalized)
-\Title{Dynamic Assembly Theory and Information Evolution}
+\Title{Adaptive Bayesian Complexity in Dynamic Assembly and Information Evolution}
 
 % MDPI internal command: Title for citation in the left column
-\TitleCitation{Dynamic Assembly Theory and Information Evolution}
+\TitleCitation{Adaptive Bayesian Complexity in Dynamic Assembly and Information Evolution}
 
 % Author Orchid ID: enter ID or remove command
 \newcommand{\orcidauthorA}{0009-0007-7122-0317} % Add \orcidA{} behind the author's name
 
 % Authors, for the paper (add full first names)
-\Author{Dan Adler $^{1,\dagger,\ddagger}$\orcidA{}}
+\Author{Dan Adler $^{1}$\orcidA{}}
 
 %\longauthorlist{no}
 
@@ -116,18 +116,18 @@
 
 % Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
 \address{%
-$^{1}$ \quad dan@danadler.com.com}
+$^{1}$ \quad dan@danadler.com}
 
 %\simplesumm{} % Simple summary
 
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{This paper explores the principles of dynamic assembly and information evolution by integrating insights from Assembly Theory and extending them through a forward-looking framework, ABC systems. ABC systems model the generation and persistence of patterns through probabilistic interactions and stability-driven selection, providing a versatile mechanism for understanding emergent complexity without relying on specific physical laws. The framework operates on two interdependent distributions: the population distribution, which represents the relative abundance of patterns, and the stability distribution, which governs the likelihood of successful interactions and persistence. By applying dynamic graph representations, Bayesian updating, and Lagrangian principles, this study reveals how stability gradients and resource flows lead to emergent phenomena such as catalytic cycles, adaptive pathways, and self-organization. The approach is contrasted with traditional backward-tracing methodologies in Assembly Theory, emphasizing the forward construction of novel patterns and their dependence on dynamic constraints. Through theoretical analysis and simulations, this work underscores the potential of dynamic assembly systems to model evolutionary processes, prebiotic chemistry, and the emergence of order in complex networks, providing a foundation for future research in both natural and artificial systems.}
+\abstract{This paper explores the principles of dynamic assembly and information evolution by integrating insights from Assembly Theory and extending them through a forward-looking framework. Adaptive Bayesian Complexity (ABC) systems model the generation and persistence of patterns through probabilistic interactions and stability-driven selection, providing a versatile mechanism for understanding emergent complexity without relying on specific physical laws. The framework operates on two interdependent distributions: the population distribution, which represents the relative abundance of patterns, and the stability distribution, which governs the likelihood of successful interactions and persistence. By applying dynamic graph representations, Bayesian updating, and Lagrangian principles, this study reveals how stability gradients and resource flows lead to emergent phenomena such as catalytic cycles, adaptive pathways, and self-organization. The approach is contrasted with traditional backward-tracing methodologies in Assembly Theory, emphasizing the forward construction of novel patterns and their dependence on dynamic constraints. Through theoretical analysis and simulations, this work underscores the potential of dynamic assembly systems to model evolutionary processes, prebiotic chemistry, and the emergence of order in complex networks, providing a foundation for future research in both natural and artificial systems.}
 
 
 % Keywords
-\keyword{Dynamic Assembly; Information Evolution; Assembly Theory; Stability-driven Selection; Emergent Complexity; Evolutionary Dynamics; Probabilistic Interactions; Top-down and Bottom-up Causality; Information Dynamics; Roulette Wheel Selection}
+\keyword{Dynamic Assembly; Information Evolution; Adaptive Bayesian Complexity; Assembly Theory; Stability-driven Selection; Emergent Complexity; Evolutionary Dynamics; Probabilistic Interactions; Information Dynamics; Roulette Wheel Selection}
 
 % The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
 %\PACS{J0101}
@@ -184,7 +184,7 @@ The emergence of complexity and information from randomness is a profound questi
 
 Assembly Theory (AT) \cite{walker2023nature} provides a powerful framework for understanding how selection shapes the generation and proliferation of complex objects by quantifying their assembly index, defined as the minimal number of recursive steps required to construct an object. By incorporating both historical contingency and selection, AT offers insights into the combinatorial explosion of possibilities in assembly spaces, illustrating how selection restricts this space to produce high-complexity objects found in abundance. However, AT typically operates from an observed object backward, constructing assembly pathways to infer the history of its formation.
 
-This paper introduces ABC systems \cite{adler2024howinfoevolves}, which extend and complement AT by focusing on forward dynamics: modeling how patterns evolve step by step from base elements through probabilistic interactions and stability-driven selection. Unlike the retrospective approach of AT, ABC systems explore the generative processes that lead to the creation and proliferation of complex patterns in a dynamic environment. Stability constraints play a central role, as they bias interactions toward configurations that persist longer and interact more frequently, introducing an element of selection akin to that described in AT. This dynamic process has the potential to encode logical operations, computational rules, and, under certain conditions, self-replicating behaviors. The forward-building approach of ABC systems offers a practical framework for exploring the emergence of complexity, particularly in prebiotic or synthetic contexts.
+This paper introduces Adaptive Bayesian Complexity (ABC) systems \cite{adler2024howinfoevolves}, which extend and complement AT by focusing on forward dynamics: modeling how patterns evolve step by step from base elements through probabilistic interactions and stability-driven selection. Unlike the retrospective approach of AT, ABC systems explore the generative processes that lead to the creation and proliferation of complex patterns in a dynamic environment. Stability constraints play a central role, as they bias interactions toward configurations that persist longer and interact more frequently, introducing an element of selection akin to that described in AT. This dynamic process has the potential to encode logical operations, computational rules, and, under certain conditions, self-replicating behaviors. The forward-building approach of ABC systems offers a practical framework for exploring the emergence of complexity, particularly in prebiotic or synthetic contexts.
 
 By drawing connections between ABC systems and AT, this work highlights both overlapping and complementary aspects of the two frameworks. While AT provides a rigorous empirical measure of selection and assembly, ABC systems offer a predictive and generative model for understanding how stability and interaction rules shape the evolution of complexity over successive generations. This perspective bridges gaps between backward-looking and forward-building approaches to complexity, laying the groundwork for a unified theory of assembly and information evolution.
 
@@ -193,7 +193,7 @@ However, significant challenges remain in applying these principles to realistic
 
 \subsection{Definition of ABC Systems}
 
-We define "ABC Systems" as a population of base elements \( A, B, C, \dots \) that can form compounds through local pairwise interactions governed by unspecified forces. These elements may exist in either the physical universe or within an abstract conceptual framework. The stability of compounds determines how many generations they persist, whereas the base elements regenerate in each generation. Over successive generations, the system experiences a form of natural selection, where compound stability shapes the evolution of the population.
+We define an ABC system as a population of base elements \( A, B, C, \dots \) that can form compounds through local pairwise interactions governed by unspecified forces. These elements may exist in either the physical universe or within an abstract conceptual framework. The stability of compounds determines how many generations they persist, whereas the base elements regenerate in each generation. Over successive generations, the system experiences a form of natural selection, where compound stability shapes the evolution of the population.
 
 ABC systems evolve based on two interrelated probability distributions: the population distribution, which captures the relative abundance of patterns within the system, and the stability distribution, which reflects the likelihood of interactions yielding new and stable compounds. These distributions collectively govern the system's dynamics, driving the selection and evolution of stable patterns over generations and determining the emergent information encoded in the system.
 
@@ -311,13 +311,13 @@ The unrestricted system exemplifies the behavior of an unconstrained probability
 
 In contrast, the ABC system highlights the impact of stability constraints on evolving systems. Stability-weighted interactions drive the emergence of dominant patterns, reducing entropy, and creating pathways of concentrated token flows. The simulation results provide a foundation for further analysis of stability-driven dynamics and their implications, as explored in subsequent sections of this paper.
 
-\section{Bayesian Updating in ABC and the Unconstrained Systems}
+\section{Bayesian Dynamics in ABC and the Unconstrained Systems}
 
 ABC systems highlight a key distinction between Bayesian \cite{mcgrayne2011theory} updating and frequentist probabilities, illustrating their respective roles in evolving versus static systems. Bayesian updating provides a dynamic framework for incorporating information between generations, making it a hallmark of systems capable of evolution and self-organization. In this context, the "prior" has a literal meaning, referring directly to the probability distribution of the prior generation, rather than a subjective interpretation of probability or a framework for hypothesis testing.
 
 This interpretation reflects the dependency between the probability distributions in successive generations in any evolving system. Specifically, in ABC systems, the evolving state space emerges from the interactions and stabilities of patterns, leading to a probability space that changes over time. At any specific generation, the probabilities are frequentist, describing the relative frequencies of patterns. However, the evolution of these probabilities across generations is inherently Bayesian, since the prior distribution directly influences the current generation.
 
-\subsection{Bayesian Updating in ABC Systems}
+\subsection{Bayesian Dynamics in ABC Systems}
 
 In ABC systems, the probability of a pattern \( p \) in generation \( t+1 \) depends on its prior probability \( P(p_t) \), the probabilities of other patterns \( P(q_t) \), and the stability of their interactions \( S(p, q) \):
 
@@ -347,9 +347,9 @@ It also serves as selective amplification, where likelihood \( P(O_t | p_t) \) i
 
 Traditionally viewed as a tool for updating subjective beliefs based on new information, Bayes’ theorem in the context of ABC systems highlights its role in linking successive generations through probabilistic interactions and stability constraints. This generational link underscores the applicability of the theorem to evolving systems, where the "prior" is literally the distribution of the prior generation of the system \cite{le2020equation}.
 
-\subsection{Bayesian vs Markov Analysis in Evolutionary Systems}
+\subsection{Adaptive Bayesian vs Markov Analysis in Evolutionary Systems}
 
-The Bayesian framework provides a more suitable lens for analyzing ABC systems than traditional Markov processes, due to the dynamically expanding state space, nonstationary transition probabilities, and the emphasis on evolutionary pathways rather than aggregate distributions. 
+The adaptive Bayesian framework provides a more suitable lens for analyzing ABC systems than traditional Markov processes, due to the dynamically expanding state space, nonstationary transition probabilities, and the emphasis on evolutionary pathways rather than aggregate distributions. 
 
 Classical Markov processes \cite{norris1997markov} rely on fixed state spaces and stationary transition probabilities, making them ill-suited for the generative dynamics of ABC systems, where new patterns emerge and interactions evolve based on stability constraints. Unlike Markov chains, which aggregate probabilities across the entire state space, the Bayesian update rule in Eq.~(\ref{eq:bayes}) directly models the evolution of individual patterns by integrating prior probabilities, interaction dynamics, and stability.
 
@@ -390,24 +390,32 @@ From a physical perspective, the behavior of token flows in the ABC system paral
 
 Dynamic graphs have been used for switch-level simulation of transistor networks \cite{AdlerCAD}, where graph pathways are dynamically determined by the state of the on transistors, enabling specific connections to guide current flow. Similarly, in ABC systems, token flow is governed by stability and probabilistic interactions, determining which nodes persist and propagate. Both frameworks employ dynamic graphs to model evolving pathways, where stability in ABC systems plays an analogous role to conductance, influencing the flow dynamics within each generation.
 
-\subsection{Polymerization as an Example of ABC Systems}
+\subsection{Chemical Examples: Oxidation and Hydrolysis}
 
-To illustrate the principles of ABC systems in a real-world context, we present a polymerization reaction graph (see Figure~\ref{fig:polymerization_graph}), which models the stepwise assembly of polymer chains from ethylene (\( \text{C}_2\text{H}_4 \)) monomers. 
+To illustrate the principles of ABC systems in realistic chemical contexts, we present two examples: the oxidation of iron and the hydrolysis and esterification of acetic acid derivatives. These examples demonstrate how stability-driven selection and probabilistic interactions shape the dynamics of complex chemical systems.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{abc_poly.png}
-    \caption{Polymerization reaction graph illustrating the stepwise assembly of polymer chains from ethylene (\( \text{C}_2\text{H}_4 \)) monomers. Nodes represent chemical species, annotated with their stability (\( S \)) and relative abundance (\( N \)), while edges depict possible reaction pathways. The graph highlights both stable pathways leading to linear polymers and less stable intermediates, showcasing the evolutionary dynamics of ABC systems.}
-    \label{fig:polymerization_graph}
+    \includegraphics[width=1\textwidth]{abc_oxi.png}
+    \caption{Reaction network for iron oxidation, illustrating the stepwise formation of stable and intermediate compounds under stability constraints.}
+    \label{fig:abc_oxi}
 \end{figure}
 
-This graph captures the formation of intermediate species such as dimers (\( \text{C}_4\text{H}_8 \)), trimers (\( \text{C}_6\text{H}_{12} \)), and tetramers (\( \text{C}_8\text{H}_{16} \)), eventually leading to the formation of a polymer chain. Additionally, less stable by-products such as branched dimers, terminated trimers, and cyclic oligomers are included to emphasize the evolutionary aspect of the system. Each node in the graph represents a chemical species, annotated with its stability (\( S \)) and relative abundance (\( N \)), while the edges depict possible reaction pathways.
+The oxidation example (Figure~\ref{fig:abc_oxi}) represents a straightforward, abiotically occurring reaction network where iron (\(Fe\)) reacts with oxygen (\(O\)) to form various oxides. Starting with diatomic oxygen (\(O_2\)) formed from base oxygen atoms, the reaction progresses through intermediate oxides such as iron(II) oxide (\(FeO\)) to more stable compounds like hematite (\(Fe_2O_3\)) and magnetite (\(Fe_3O_4\)). Competing side reactions, such as partial oxidation and formation of unstable intermediates, highlight how stability influences the progression of reactions. This example provides a testable setup for validating the role of stability in directing reaction pathways. By assigning stability values to intermediates and products, we can simulate the token flow dynamics and compare them to experimental observations, demonstrating how stability-driven selection operates in an abiotic system.
 
-This example is analogous to the ABC system framework as it models the flow of base elements and compounds through a network of interactions governed by stability constraints. Stability in this context reflects the thermodynamic and kinetic properties of the species: compounds with higher stabilities (e.g., the polymer) are more likely to persist and accumulate over successive reactions, while less stable species (e.g., branched or terminated intermediates) are transient or exist in lower abundances. The replenishment of ethylene monomers ensures a continuous supply of resources, akin to the base element replenishment in ABC systems.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{abc_hydro.png}
+    \caption{Reaction network for hydrolysis and esterification, illustrating stability-driven selection and competing pathways.}
+    \label{fig:abc_hydro}
+\end{figure}
 
-The stabilities assigned in the polymerization graph are chosen based on the underlying chemistry. For instance, linear oligomers are generally more stable than branched or cyclic intermediates due to reduced steric strain and favorable chain interactions. The polymer exhibits the highest stability as it represents the thermodynamically favored product in the absence of termination processes. Conversely, species such as branched dimers and cyclic oligomers have lower stabilities because their formation pathways are less favorable energetically or kinetically.
+The hydrolysis example (Figure~\ref{fig:abc_hydro}) involves a lab-testable reaction network centered on the stepwise formation and breakdown of esters. Starting with acetic acid (\(CH_3COOH\)) and methanol (\(CH_3OH\)), the primary pathway includes esterification to form methyl acetate (\(CH_3COOCH_3\)) and subsequent reactions leading to acetic anhydride (\((CH_3CO)_2O\)) and ethyl acetate (\(CH_3COOCH_2CH_3\)). Side reactions, including hydrolysis and reverse reactions, introduce competing flows that reduce stability and divert resources. This reaction network is ideal for validating ABC system simulations, as it allows us to assign stability values to intermediates and observe how token flows evolve under varying experimental conditions.
 
-This example also highlights the similarities and differences between ABC systems and Assembly Theory (AT). Both frameworks address the combinatorial explosion of possible configurations during assembly processes. In AT, the assembly index quantifies the minimal number of recursive steps required to construct an object. In the polymerization graph, this would correspond to the number of monomer additions needed to produce each species. However, ABC systems differ by emphasizing forward dynamics and the role of stability constraints in shaping evolutionary pathways. Unlike the retrospective analysis in AT, which traces observed objects back to their precursors, ABC systems focus on the probabilistic emergence of patterns and their persistence under environmental conditions. 
+The stabilities in the oxidation and hydrolysis graphs are grounded in their underlying chemistry. Stable products such as hematite in oxidation or methyl acetate in hydrolysis are thermodynamically favored, while intermediates like partial oxides or transient esters have lower stabilities due to less favorable energy profiles. These examples highlight the similarities and distinctions between ABC systems and Assembly Theory (AT). While AT focuses on tracing observed objects back to their assembly pathways using the assembly index, ABC systems emphasize forward dynamics, showing how stability constraints and probabilistic interactions drive the emergence and persistence of patterns. This forward-looking perspective aligns well with real-world processes, offering a dynamic framework for studying chemical evolution.
+
+Both examples underscore the versatility of ABC systems in modeling chemical evolution. The oxidation example offers an abiotic, naturally occurring process that directly aligns with the principles of stability-driven selection. In contrast, the hydrolysis example provides a more complex, experimentally accessible network where competing pathways and stability dynamics can be systematically tested. Together, these examples bridge theoretical and experimental studies of dynamic assembly and information evolution.
+
 
 \section{Lagrangian Analysis of ABC Systems}
 
@@ -477,7 +485,7 @@ ABC systems exhibit dynamics characterized by periods of stability, where establ
 
 For instance, consider the graph in Figure~\ref{fig:abc_sim}, where a dominant high-stability node, such as \( ABCABA \) (\( S = 8 \)), governs flow dynamics. If a new node \( ABCABC \) emerges with greater stability (\( S = 10 \)), it can divert flows from \( ABCABA \), triggering a cascade of reallocation across the system. Such transitions highlight the inherent stochasticity of node creation in ABC systems, where new configurations emerge probabilistically, reshaping the stability landscape and dominance hierarchy.
 
-As we showed in Figure~\ref{fig:polymerization_graph}, this is analogous to polymerization processes, such as the formation of polysaccharides. Initially, simpler chains of \( \text{C}_x(\text{H}_2\text{O})_y \) dominate, growing incrementally to more stable intermediate structures. However, the emergence of highly stable configurations, like cellulose, requires overcoming low-probability barriers associated with long chains. These transitions are rare due to the steep stability gradients and are often contingent on specific environmental conditions. This mirrors the historical contingency emphasized in Assembly Theory (AT), where high-assembly-index objects reflect pathways shaped by selection and constraints \cite{walker2023nature}.
+As illustrated in Figure~\ref{fig:abc_oxi}, the oxidation of iron provides an example of stepwise progression toward increasingly stable configurations. Initial stages involve the formation of ferrous oxide (\( \text{FeO} \)) and ferric oxide (\( \text{Fe}_2\text{O}_3 \)), culminating in the highly stable hematite (\( \text{Fe}_2\text{O}_3 \cdot \text{H}_2\text{O} \)). These transitions highlight the role of stability gradients, where more stable products dominate as the system evolves. Similarly, the hydrolysis example in Figure~\ref{fig:abc_hydro} demonstrates how intermediate esters and anhydrides evolve into thermodynamically stable configurations such as methyl acetate. These processes reflect the principles of Assembly Theory (AT), where high-assembly-index products emerge under constraints and selection pressures \cite{walker2023nature}, but ABC systems extend this by emphasizing the forward dynamics and probabilistic pathways driven by stability constraints.
 
 In ABC systems, the interplay between stochastic node creation and stability-driven flows creates a dynamic equilibrium that mirrors real-world chemical and biological processes. By explicitly modeling these transitions, ABC systems offer insights into how complexity evolves through both gradual adaptations and disruptive innovations.
 
